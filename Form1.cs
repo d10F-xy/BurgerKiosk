@@ -59,7 +59,7 @@ namespace BurgerKiosk
             }
 
             lblErrorMsg.Visible = false;
-            lblTotalPrice.Text = $"총 금액: {totalPrice}원";
+            lblTotalPrice.Text = $"총 금액: {totalPrice:N0}원";
 
         }
 
