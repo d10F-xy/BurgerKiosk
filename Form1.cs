@@ -6,6 +6,7 @@ namespace BurgerKiosk
         public Form1()
         {
             InitializeComponent();
+            this.AcceptButton = btnOrder;
 
 
         }
