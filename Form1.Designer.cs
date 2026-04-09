@@ -252,6 +252,7 @@
             btnClear.TabIndex = 2;
             btnClear.Text = "초기화";
             btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
             // 
             // Form1
             // 
