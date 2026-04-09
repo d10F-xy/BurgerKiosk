@@ -1,3 +1,5 @@
+using System.Drawing.Text;
+
 namespace BurgerKiosk
 {
     public partial class Form1 : Form
@@ -7,18 +9,14 @@ namespace BurgerKiosk
         {
             InitializeComponent();
             this.AcceptButton = btnOrder;
-
-
         }
 
-        private void btnOrder_Click(object sender, EventArgs e)
+        private void AddOrder()
         {
-            if (!rdoHamBurger.Checked && !rdoBulgogiBurger.Checked && !rdoChickenBurger.Checked)
-            {
-                lblErrorMsg.Visible = true;
-                return;
-            }
+            totalPrice = 0;
+            lstOrderlist.Items.Clear();
 
+            // 메인 메뉴
             if (rdoHamBurger.Checked)
             {
                 totalPrice += 5000;
@@ -35,6 +33,7 @@ namespace BurgerKiosk
                 lstOrderlist.Items.Add("치킨버거 3,000원");
             }
 
+            // 사이드 메뉴
             if (chkPotato.Checked)
             {
                 totalPrice += 3500;
@@ -59,8 +58,18 @@ namespace BurgerKiosk
                 lstOrderlist.Items.Add("소스추가 500원");
             }
 
-            lblErrorMsg.Visible = false;
             lblTotalPrice.Text = $"총 금액: {totalPrice:N0}원";
+        }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            if (!rdoHamBurger.Checked && !rdoBulgogiBurger.Checked && !rdoChickenBurger.Checked)
+            {
+                lblErrorMsg.Visible = true;
+                return;
+            }
+
+            lblErrorMsg.Visible = false;
 
         }
 
@@ -79,6 +88,11 @@ namespace BurgerKiosk
 
             lstOrderlist.Items.Clear();
             lblTotalPrice.Text = "총 금액: 0원";
+        }
+
+        private void chkCheese_CheckedChanged(object sender, EventArgs e)
+        {
+            AddOrder();
         }
     }
 }
