@@ -14,7 +14,7 @@ namespace BurgerKiosk
         {
             if (!rdoHamBurger.Checked && !rdoBulgogiBurger.Checked && !rdoChickenBurger.Checked)
             {
-                MessageBox.Show("햄버거를 선택해주세요.");
+                lblErrorMsg.Visible = true;
                 return;
             }
 
@@ -72,6 +72,8 @@ namespace BurgerKiosk
             chkCola.Checked = false;
             chkCheese.Checked = false;
             chkSauce.Checked = false;
+
+            lblErrorMsg.Visible = false;
 
             lstOrderlist.Items.Clear();
             lblTotalPrice.Text = "총 금액: 0원";

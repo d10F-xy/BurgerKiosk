@@ -46,6 +46,7 @@
             lstOrderlist = new ListBox();
             btnOrder = new Button();
             btnClear = new Button();
+            lblErrorMsg = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -254,11 +255,24 @@
             btnClear.UseVisualStyleBackColor = false;
             btnClear.Click += btnClear_Click;
             // 
+            // lblErrorMsg
+            // 
+            lblErrorMsg.AutoSize = true;
+            lblErrorMsg.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            lblErrorMsg.ForeColor = Color.Red;
+            lblErrorMsg.Location = new Point(588, 427);
+            lblErrorMsg.Name = "lblErrorMsg";
+            lblErrorMsg.Size = new Size(138, 15);
+            lblErrorMsg.TabIndex = 8;
+            lblErrorMsg.Text = "햄버거를 선택해 주세요.";
+            lblErrorMsg.Visible = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblErrorMsg);
             Controls.Add(btnClear);
             Controls.Add(btnOrder);
             Controls.Add(grpOrder);
@@ -300,5 +314,6 @@
         private ListBox lstOrderlist;
         private Button btnOrder;
         private Button btnClear;
+        private Label lblErrorMsg;
     }
 }
